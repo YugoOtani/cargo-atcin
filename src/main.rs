@@ -157,9 +157,7 @@ fn extract_input_output(html: Html) -> Vec<(String, String)> {
 
 fn get_input_number(text: &str) -> Option<usize> {
     // 入力例 1 or Sample Input 1 -> 1
-    if
-    /*text.contains("入力例") ||*/
-    text.contains("Input") {
+    if text.contains("入力例") || text.contains("Input") {
         let number = text.split_whitespace().last().unwrap();
         return number.parse::<usize>().ok();
     } else {
@@ -168,9 +166,7 @@ fn get_input_number(text: &str) -> Option<usize> {
 }
 fn get_output_number(text: &str) -> Option<usize> {
     // 出力例 1 or Sample Output 1 -> 1
-    if
-    /*text.contains("出力例") ||*/
-    text.contains("Output") {
+    if text.contains("出力例") || text.contains("Output") {
         let number = text.split_whitespace().last().unwrap();
         return number.parse::<usize>().ok();
     } else {
